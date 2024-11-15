@@ -1,0 +1,37 @@
+BACK OFFICE:
+    I- CRUD(insert + liste)
+        -poste
+        -diplome
+        -competence
+        -employé(+ upload CV et lettre de lettre de motivation)
+    II- annonce d'un recrutement:
+        1- CRUD annonce
+        2- si possible l'annonce va être disponible en format pdf
+    II- liste des candidats par annonce
+        1- tableau où se trouvent les employés ont les compétences requises pour le poste
+            a- fonction pour prendre la liste des employés qui ont les compétences requises pour le poste à l'aide de leur CV
+            b- fonction pour calculer le note du CV par rapport aux exigences du poste
+            c- fonction pour noter la lettre de motivation
+        2- tableau des candidats qui sont qualifiés pour le poste + notes des cv et lettre de motivation
+            a- prendre la liste des candidats qui postulent au poste
+            b- fonction de II-1-b et II-1-b
+        3- les deux tableaux auront chacun un bouton pour valider les candidats pour un entretien(=> prise de rendez_vous)
+            a- redirigez vers la prise de rendez_vous
+        NB: 
+            les tableaux seront des plus qualifiés au moins qualifiés
+            le CV sera noté sur 10, la lettre de motivation sur 10 et l'entretien sur 20
+    IV- rendez_vous
+        1- liste des rendez_vous si possible dans un calendrier
+        2- insert de rendez_vous qui vient de la validation du candidature
+    V- validation du directeur
+        1- liste des candidats qui ont réussi l'entretien exemple 80% de réussite
+        2- bouton pour valider le contrat
+        3- rédaction du contrat de travail et son insertion
+
+FRONT OFFICE
+    I- page de login de l'employé(peut tous simplement être son email)
+    II- page pour voir la liste des postes disponibles avec critère si possible(exemple ne voir que les postes de developpeurs)
+    III- pages pour faire répondre aux questions
+        1- notez les réponses du candidats en utilisant chatgpt
+        2- insérer les notes dans la base de données
+        
