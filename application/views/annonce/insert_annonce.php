@@ -18,26 +18,17 @@
         <label for="experience">Années d'Expérience:</label>
         <input type="number" id="experience" name="experience" required><br><br>
 
-        <label for="diplome">Diplôme:</label>
-        <select id="diplome" name="diplome" required>
-            <option value="none">Sélectionner un diplôme</option>
-            <option value="bachelor">Licence</option>
-            <option value="master">Master</option>
-            <option value="phd">Doctorat</option>
-            <!-- Add more options as needed -->
-        </select><br><br>
+        <label for="diplome">Sélectionner vos diplômes</label> <br/>
+            <? foreach ($diplomes as $diplome): ?>
+                <input type="checkbox" name="diplomes[]" value="<?= $diplome['id_diplome'] ?>"> /> <?= $diplome['nom_diplome'] ?> 
+            <?php endforeach ?>
+        <br><br>
 
-        <label for="competence">Compétence:</label>
-        <input type="text" id="competence" name="competence[]" required><br>
-        <input type="text" id="competence" name="competence[]" required><br>
-        <input type="text" id="competence" name="competence[]" required><br>
-        <!-- Add more fields for competencies as needed -->
-
-        <br><label for="cv">Upload CV:</label>
-        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required><br><br>
-
-        <label for="motivation">Upload Lettre de Motivation:</label>
-        <input type="file" id="motivation" name="motivation" accept=".pdf,.doc,.docx" required><br><br>
+        <label for="comptence">Sélectionner vos competence:</label>
+        <? foreach ($competences as $competence): ?>
+                <input type="checkbox" name="competences[]" value="<?= $competence['id_competence'] ?>"> /> <?= $competence['nom_diplome'] ?> 
+            <?php endforeach ?>
+        <br><br>
 
         <button type="submit">OK</button>
     </form>
