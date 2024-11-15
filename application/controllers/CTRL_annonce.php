@@ -13,7 +13,7 @@ class CTRL_annonce extends CI_Controller {
         $this->load->model('Diplome');
         $data['diplome'] = $this->Diplome->get_all_diplomes();
 
-        $this->load->view('insert_annonce', $data);
+        $this->load->view('annonce/insert_annonce', $data);
     }
 }
 
