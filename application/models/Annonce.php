@@ -8,8 +8,9 @@ class Annonce extends CI_Model {
         $this->load->model('Competence');
     }
 
-    public function get_all_competence() {
+    public function get_all_competences() {
         $query = $this->db->get('competence');
+        return $query->result();
     }
 
     public function get_all_diplomes() {
