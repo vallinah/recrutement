@@ -7,8 +7,12 @@ class CTRL_annonce extends CI_Controller {
     }
 
     public index() {
-        $this->load->model('Annonce');
-        $data['competence'] = $this->Annonce->get_comptence(); 
+        $this->load->model('Competence');
+        $data['competence'] = $this->Competence->get_all_competence();
+        
+        $this->load->model('Diplome');
+        $data['diplome'] = $this->Diplome->get_all_diplome();
+
         $this->load->view('form_page', $data);
     }
 }
