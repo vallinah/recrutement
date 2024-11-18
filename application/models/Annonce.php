@@ -23,7 +23,7 @@ class Annonce extends CI_Model {
     }
 
     public function get_diplome_by_annnonce_id($id) {
-        return $this->db->get_where('annonce_competence', ['id_annonce' => $id])->row();
+        return $this->db->get_where('annonce_diplome', ['id_annonce' => $id])->row();
     }
 
     public function get_all() {

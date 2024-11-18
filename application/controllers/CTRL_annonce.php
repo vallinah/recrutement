@@ -15,12 +15,12 @@ class CTRL_annonce extends CI_Controller {
         $this->load->model('Diplome');
         $data['diplomes'] = $this->Diplome->get_all_diplomes();
 
-        $this->load->view('annonce/insert_annonce', $data);
+        $this->load->view('annonce/liste_annonce', $data);
     }
 
 
     public function create() {
-        $this->load->view('annonce/create');
+        $this->load->view('annonce/form_annonce');
     }
 
     public function create() {
@@ -31,28 +31,24 @@ class CTRL_annonce extends CI_Controller {
             'quantite' => $this->input->post('quantite'),
         ];
         $this->Produit_model->insert($data);
-        redirect('annonce/list_annonce');
+        redirect('annonce/liste_annonce');
     }
 
     public function edit($id) {
         $data['annonce'] = $this->Annonce->get_by_id($id);
-        $this->load->view('annonce/insert_annonce', $data);
+        $this->load->view('annonce/update_annonce', $data);
     }
 
-    public function update($id) {
-        $data = [
-            'nom' => $this->input->post('nom'),
-            'description' => $this->input->post('description'),
-            'prix' => $this->input->post('prix'),
-            'quantite' => $this->input->post('quantite'),
-        ];
-        $this->Produit_model->update($id, $data);
-        redirect('annonce/insert_annonce');
+    
+    public function update($id_annonce, $data) {
+        $this->db->where('id_annonce', $id_annonce);
+        $this->db->update('annonce', $data);
+        redirect('annonce/liste_annonce');
     }
 
     public function delete($id) {
         $this->Produit_model->delete($id);
-        redirect('annonce/list_annonce');
+        redirect('annonce/liste_annonce');
     }
 }
 
