@@ -21,7 +21,7 @@
             <?php endforeach ?>
         <br><br>
 
-        <label for="comptence">Sélectionner vos competence:</label>
+        <label for="comptence">Sélectionner vos competences:</label>
         <? foreach ($competences as $competence): ?>
                 <input type="checkbox" name="competences[]" value="<?= $competence['id_competence'] ?>"> /> <?= $competence['nom_competence'] ?> 
             <?php endforeach ?>

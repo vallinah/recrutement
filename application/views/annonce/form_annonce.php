@@ -7,7 +7,7 @@
         <input type="text" id="poste" name="poste" required><br><br>
 
         <label for="date">Date:</label>
-        <input type="date" id="date" name="date" required><br><br>
+        <input type="date" id="date" name="daty" required><br><br>
 
         <label for="limit_date">Limite Date:</label>
         <input type="date" id="limit_date" name="limit_date" required><br><br>
@@ -24,7 +24,7 @@
             <?php endforeach ?>
         <br><br>
 
-        <label for="comptence">Sélectionner vos competence:</label>
+        <label for="comptence">Sélectionner vos competences:</label>
         <? foreach ($competences as $competence): ?>
                 <input type="checkbox" name="competences[]" value="<?= $competence['id_competence'] ?>"> /> <?= $competence['nom_competence'] ?> 
             <?php endforeach ?>

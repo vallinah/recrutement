@@ -25,12 +25,12 @@ class CTRL_annonce extends CI_Controller {
 
     public function create() {
         $data = [
-            'nom' => $this->input->post('nom'),
-            'description' => $this->input->post('description'),
-            'prix' => $this->input->post('prix'),
-            'quantite' => $this->input->post('quantite'),
+            'departement' => $this->input->post('dep'),
+            'poste' => $this->input->post('poste'),
+            'daty' => $this->input->post('daty'),
+            'limit_date' => $this->input->post('limit_date'),
         ];
-        $this->Produit_model->insert($data);
+        $this->Annonce->insert($data);
         redirect('annonce/liste_annonce');
     }
 
